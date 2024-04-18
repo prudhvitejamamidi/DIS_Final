@@ -1,20 +1,43 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Personal Finance Tracker<</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li><a href="@Url.Action("Login", "Home")">Login</a></li>
+                <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                <li><a href="@Url.Action("AddExpense", "Expense")">Add Expenses</a></li>
+                <li><a href="@Url.Action("Index", "About")">About</a></li>
+             </ul>
+                <div class="user-profile">
+                        <img src="user-avatar.png" alt="User Avatar">
+                        <span>John Doe</span>
+                 </div>
+        </nav>
+    </header>
 
-  <div class="header">
-    Header goes here
-  </div>
-  
-  <div class="body-content">
-    @RenderBody()
-  </div>
 
-  <div class="footer">
-    Footer goes here
-  </div>
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Personal Finance Tracker. All rights reserved.</p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
+

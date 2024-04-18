@@ -21,11 +21,13 @@
     <None Remove="Views\Dashboard\" />
     <None Remove="Views\Expense\" />
     <None Remove="Views\About\" />
+    <None Remove="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Dashboard\" />
     <Folder Include="Views\Expense\" />
     <Folder Include="Views\About\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 </Project>

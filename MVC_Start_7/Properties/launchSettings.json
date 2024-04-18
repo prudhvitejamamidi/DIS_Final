@@ -33,10 +33,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PersonalFinacneTracker": {
+    "PersonalFinanceTracker": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:29214;http://localhost:32818",
+      "applicationUrl": "https://localhost:32355;http://localhost:15719",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

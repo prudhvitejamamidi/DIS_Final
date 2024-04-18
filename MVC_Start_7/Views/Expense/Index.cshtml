@@ -1,11 +1,32 @@
-﻿using System;
-namespace PersonalFinacneTracker.Views.Expense
-{
-	public class Index
-	{
-		public Index()
-		{
-		}
-	}
+﻿@model IEnumerable<PersonalFinanceTracker.Models.Expense>
+
+@{
+    ViewData["Title"] = "Expenses";
 }
 
+<div class="expense-list">
+    <h2>Your Expenses</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Expense Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var expense in Model)
+            {
+                <tr>
+                    <td>@expense.expense_type</td>
+                    <td>@expense.amount.ToString("C")</td>
+                    <td>@expense.expense_date.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="add-expense">
+    <a href="@Url.Action("AddExpense", "Expense")" class="add-expense-button">Add Expense</a>
+</div>

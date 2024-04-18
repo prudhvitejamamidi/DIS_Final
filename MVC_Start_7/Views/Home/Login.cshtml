@@ -1,11 +1,22 @@
-﻿using System;
-namespace PersonalFinacneTracker.Views.Home
-{
-	public class Login
-	{
-		public Login()
-		{
-		}
-	}
+﻿@model PersonalFinanceTracker.Models.User
+
+@{
+    ViewData["Title"] = "Login";
 }
 
+<div class="login-container">
+    <h1>Welcome Back!</h1>
+    <form class="login-form" asp-action="Login" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label asp-for="username" class="control-label"></label>
+        <input asp-for="username" class="form-control" />
+        <span asp-validation-for="username" class="text-danger"></span>
+
+        <label asp-for="password" class="control-label"></label>
+        <input asp-for="password" type="password" class="form-control" />
+        <span asp-validation-for="password" class="text-danger"></span>
+
+        <button type="submit" class="login-button">Log In</button>
+    </form>
+    <p>Don't have an account? <a href="#">Sign Up</a></p>
+</div>

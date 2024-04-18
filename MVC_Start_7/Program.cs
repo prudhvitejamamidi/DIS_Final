@@ -1,5 +1,15 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using PersonalFinanceTracker.Repositories;
 
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+// Add repository services
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<BudgetRepository>();
+builder.Services.AddScoped<ExpenseRepository>();
+builder.Services.AddScoped<TeamMemberRepository>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -20,9 +30,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Contact}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 
