@@ -16,4 +16,16 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Dashboard\" />
+    <None Remove="Views\Expense\" />
+    <None Remove="Views\About\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\Expense\" />
+    <Folder Include="Views\About\" />
+  </ItemGroup>
 </Project>
